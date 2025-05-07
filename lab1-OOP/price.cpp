@@ -13,12 +13,12 @@ Price multiply(Price price, int quantity) {
 
 Price roundPrice( Price price) {
     int total_coins = price.grn * 100 + price.coins;
-    int remainder = total_coins % 10;
-    if (remainder < 5) {
+    int remainder = total_coins % 50;
+    if (remainder < 25) {
         total_coins -= remainder;
     }
     else {
-        total_coins += (10 - remainder);
+        total_coins += (50 - remainder);
     }
     return { total_coins / 100, total_coins % 100 };
 }
